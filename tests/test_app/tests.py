@@ -88,11 +88,11 @@ class ArchiveMixinTestCase(TestCase):
 
         base2.delete()
 
-        self.assertEquals(1, models.BaseArchiveModel.objects.count())
-        self.assertEquals(0, models.RelatedModel.objects.count())
-        self.assertEquals(0, models.RelatedArchiveModel.objects.count())
-        self.assertEquals(0, models.RelatedCousinModel.objects.count())
-        self.assertEquals(0, models.RelatedCousinArchiveModel.objects.count())
+        self.assertEqual(1, models.BaseArchiveModel.objects.count())
+        self.assertEqual(0, models.RelatedModel.objects.count())
+        self.assertEqual(0, models.RelatedArchiveModel.objects.count())
+        self.assertEqual(0, models.RelatedCousinModel.objects.count())
+        self.assertEqual(0, models.RelatedCousinArchiveModel.objects.count())
 
     def test_cascade_set_null(self):
         """
@@ -106,9 +106,9 @@ class ArchiveMixinTestCase(TestCase):
 
         base2.delete()
 
-        self.assertEquals(1, models.BaseArchiveModel.objects.count())
-        self.assertEquals(1, models.RelatedModel.objects.count())
-        self.assertEquals(1, models.RelatedCousinModel.objects.count())
+        self.assertEqual(1, models.BaseArchiveModel.objects.count())
+        self.assertEqual(1, models.RelatedModel.objects.count())
+        self.assertEqual(1, models.RelatedCousinModel.objects.count())
 
         self.assertTrue(
             models.RelatedModel.objects.filter(pk=related.pk).exists())
@@ -125,9 +125,9 @@ class ArchiveMixinTestCase(TestCase):
 
         models.BaseArchiveModel.objects.filter(pk=base2.pk).delete()
 
-        self.assertEquals(1, models.BaseArchiveModel.objects.count())
-        self.assertEquals(1, models.RelatedModel.objects.count())
-        self.assertEquals(1, models.RelatedCousinModel.objects.count())
+        self.assertEqual(1, models.BaseArchiveModel.objects.count())
+        self.assertEqual(1, models.RelatedModel.objects.count())
+        self.assertEqual(1, models.RelatedCousinModel.objects.count())
 
         self.assertTrue(
             models.RelatedModel.objects.filter(pk=related.pk).exists())
@@ -144,9 +144,9 @@ class ArchiveMixinTestCase(TestCase):
 
         base2.delete()
 
-        self.assertEquals(1, models.BaseArchiveModel.objects.count())
-        self.assertEquals(1, models.RelatedModel.objects.count())
-        self.assertEquals(1, models.RelatedCousinModel.objects.count())
+        self.assertEqual(1, models.BaseArchiveModel.objects.count())
+        self.assertEqual(1, models.RelatedModel.objects.count())
+        self.assertEqual(1, models.RelatedCousinModel.objects.count())
 
         self.assertTrue(
             models.RelatedModel.objects.filter(pk=related.pk).exists())
